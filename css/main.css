@@ -2,7 +2,7 @@
   --body-bg-color: #fff;
   --content-bg-color: #f5f5f5;
   --card-bg-color: #f5f5f5;
-  --text-color: #555;
+  --text-color: #222;
   --link-color: #555;
   --link-hover-color: #222;
   --brand-color: #222;
@@ -176,7 +176,7 @@ body {
 body {
   background: var(--body-bg-color);
   color: var(--text-color);
-  font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Source Serif 4', 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 1em;
   line-height: 2;
 }
@@ -192,7 +192,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Source Serif 4', 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: bold;
   line-height: 1.5;
   margin: 20px 0 15px;
@@ -587,7 +587,7 @@ pre .javascript .function {
   margin-bottom: 10px;
 }
 .post-body .label {
-  color: #555;
+  color: #222;
   display: inline;
   padding: 0 2px;
 }
@@ -992,9 +992,10 @@ pre .javascript .function {
   color: var(--brand-hover-color);
 }
 .site-title {
-  font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Source Serif 4', 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 1.375em;
   font-weight: normal;
+  letter-spacing: 0.25em;
   margin: 0;
 }
 .site-subtitle {
@@ -1049,7 +1050,7 @@ pre .javascript .function {
 }
 .footer {
   color: #999;
-  font-size: 0.875em;
+  font-size: 0.75em;
   padding: 20px 0;
 }
 .footer.footer-fixed {
@@ -1192,7 +1193,7 @@ pre .javascript .function {
   }
 }
 .post-body {
-  font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Source Serif 4', 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
@@ -1490,7 +1491,7 @@ pre .javascript .function {
 }
 .posts-expand .post-meta {
   color: #999;
-  font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Source Serif 4', 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 0.75em;
   margin: 3px 0 60px 0;
   text-align: center;
@@ -1825,7 +1826,6 @@ hr {
   }
 }
 .footer {
-  background: var(--content-bg-color);
   color: var(--text-color);
   padding: 10px 0;
 }
@@ -1839,7 +1839,8 @@ hr {
   }
 }
 .header {
-  background: var(--content-bg-color);
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 .header-inner {
   align-items: center;
@@ -1866,32 +1867,9 @@ hr {
 }
 .site-meta .site-title {
   font-weight: bolder;
-}
-.logo-line-before,
-.logo-line-after {
-  display: block;
-  margin: 0 auto;
-  overflow: hidden;
-  width: 100%;
-}
-@media (max-width: 767px) {
-  .logo-line-before,
-  .logo-line-after {
-    display: none;
-  }
-}
-.logo-line-before i,
-.logo-line-after i {
-  background: var(--brand-color);
-  display: block;
-  height: 0.1rem;
-  position: relative;
-}
-.use-motion .logo-line-before i {
-  left: -100%;
-}
-.use-motion .logo-line-after i {
-  right: -100%;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  outline: 0.125em dotted #000;
 }
 .site-subtitle {
   display: none;
