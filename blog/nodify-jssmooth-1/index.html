@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source Serif 4:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"longer2022.github.io","root":"/","scheme":"Mist","version":"0.1.0","exturl":false,"sidebar":{"position":"left","display":"remove","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="What is it?JS Smooth 系列脚本是 br3tt 给 foobar2000 的 foo_jscript_panel 界面插件写的脚本，共三个，分别是：  JS Smooth Playlist 播放列表显示 JS Smooth Browser 音乐浏览 JS Smooth PlaylistManager 播放列表切换  br3tt 曾经是个非常活跃的 foobar2000 的皮肤制作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Modify JS-Smooth Scripts (1)">
+<meta property="og:url" content="https://longer2022.github.io/blog/nodify-jssmooth-1/">
+<meta property="og:site_name" content="Longer2022&#39;s Blog">
+<meta property="og:description" content="What is it?JS Smooth 系列脚本是 br3tt 给 foobar2000 的 foo_jscript_panel 界面插件写的脚本，共三个，分别是：  JS Smooth Playlist 播放列表显示 JS Smooth Browser 音乐浏览 JS Smooth PlaylistManager 播放列表切换  br3tt 曾经是个非常活跃的 foobar2000 的皮肤制作">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-24T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-02-25T16:00:09.691Z">
+<meta property="article:author" content="longer2022">
+<meta property="article:tag" content="foobar2000">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://longer2022.github.io/blog/nodify-jssmooth-1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Modify JS-Smooth Scripts (1) | Longer2022's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+    <a href="/" class="brand" rel="start">
+      <h1 class="site-title">Longer2022's Blog</h1>
+    </a>
+  </div>
+</div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://longer2022.github.io/blog/nodify-jssmooth-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="longer2022">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Longer2022's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Modify JS-Smooth Scripts (1)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-02-25 00:00:00" itemprop="dateCreated datePublished" datetime="2022-02-25T00:00:00+08:00">2022-02-25</time>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id=""><a href="#" class="headerlink" title=""></a></h1><h2 id="What-is-it"><a href="#What-is-it" class="headerlink" title="What is it?"></a>What is it?</h2><p>JS Smooth 系列脚本是 br3tt 给 <a href="www.foobar2000.com">foobar2000</a> 的 <a target="_blank" rel="noopener" href="https://github.com/marc2k3/foo_jscript_panel">foo_jscript_panel</a> 界面插件写的脚本，共三个，分别是：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.deviantart.com/br3tt/art/JS-Smooth-Playlist-571375892">JS Smooth Playlist</a> 播放列表显示</li>
+<li><a target="_blank" rel="noopener" href="https://www.deviantart.com/br3tt/art/JS-Smooth-Browser-571376160">JS Smooth Browser</a> 音乐浏览</li>
+<li><a target="_blank" rel="noopener" href="https://www.deviantart.com/br3tt/art/JS-Smooth-Playlist-Manager-571376332">JS Smooth PlaylistManager</a> 播放列表切换</li>
+</ul>
+<p>br3tt 曾经是个非常活跃的 foobar2000 的皮肤制作者，不过在完成了 JS Smooth 系列脚本后，就没有再有新作品问世了。但 foo_jscript_panel 和 <a target="_blank" rel="noopener" href="https://github.com/TheQwertiest/foo_spider_monkey_panel">foo_spider_monkey_panel</a> 的插件都自带经过修改的 JS Smooth 脚本（以适配更新过的插件为主），所以如果希望使用这些脚本的话建议直接下载插件，然后导入随插件附带的脚本。</p>
+<h2 id="Why-Modify-it"><a href="#Why-Modify-it" class="headerlink" title="Why Modify it?"></a>Why Modify it?</h2><p>这些脚本的完成度很高，功能完善，我很乐于使用它们。并且写界面巨麻烦，相比于重新写新脚本，我本人倾向于在这些脚本上做些修改，以满足我自己的需求。</p>
+<p>另外就是，br3tt 的脚本很难修改，所以为了能便于修改，我希望做一些重构。JavaScript 以及配套的工具跟七八年前完全不一样了，现在有很多好东西，比如 ESLint，typescript，VSCode 编辑器等等。</p>
+<h2 id="How？"><a href="#How？" class="headerlink" title="How？"></a>How？</h2><p>这是个大问题，实际上，我还不知道最终的结果会是什么样子的，我打算从重构入手，先将脚本解耦为一个一个的模块，然后再做增删修改。</p>
+<p>由于要用到许多的 Nodejs 生态的工具，所以这会是一个 nodejs 项目，事先安装好 nodejs 和 yarn。</p>
+<h3 id="typescript"><a href="#typescript" class="headerlink" title="typescript?"></a>typescript?</h3><p>是不是使用 typescript? ts 是好东西，给 JS 增加了静态类型后，重构，补全等等，都好了巨多。</p>
+<pre><code class="highlight bash"><span class="comment"># 安装 typescript</span>
+npx yarn add --dev typescript</code></pre>
+
+<p>不过我不打算一开始就引入 ts，因为将原来的脚本改为 ts 动作太大，而且未必能完成。但 ts 有些东西可以利用，比如我给 foo_spider_monkey_panel 的 api 写了个 fsmp.d.ts 类型文件，之后在每个文件开头引入：</p>
+<pre><code class="highlight typescript"><span class="comment">/// &lt;reference path=&quot;path/to/fsmp.d.ts&quot; /&gt;</span></code></pre>
+
+<p>再结合 JSDoc，就可以增强补全功能了。</p>
+<h3 id="esbuild"><a href="#esbuild" class="headerlink" title="esbuild"></a>esbuild</h3><p>不用 typescript 而又要模块化，那最好就是 esmodule 方案了，import 和 export 的语法类似于 ts，以后转成 ts 可能阻力会小一些。fsmp 是肯定不支持 esm 的了，所以还是需要一道转译+打包的工序，刚好我有这个想法之后就碰到了 esbuild 这个工具，它可以将 esm 组织的项目打包成单个的 js 文件，速度非常快。</p>
+<pre><code class="highlight bash"><span class="comment"># 安装 esbuild</span>
+npx yarn add --dev esbuild</code></pre>
+
+<pre><code class="highlight json"><span class="comment">// package.js</span>
+&#123;
+ <span class="attr">&quot;scripts&quot;</span>: &#123;
+     <span class="attr">&quot;jssp&quot;</span>: <span class="string">&quot;esbuild path/to/playlist.js --bundle --platform=node --outfile=path/to/jsplaylist.js&quot;</span>,
+     <span class="attr">&quot;jssb&quot;</span>: <span class="string">&quot;esbuild path/to/browser.js --bundle --platform=node --outfile=path/to/jsbrowser.js&quot;</span>
+ &#125;   
+&#125;</code></pre>
+
+<p>需要注意的是入口文件里就不要再有任何的 export，这样生成的 bundle 文件里就没有 module… 之类的东西了，那些东西 fsmp 并不支持。</p>
+<p><code>-platform=node</code> 设定项可以避免生成的所有代码被一个匿名函数包起来。</p>
+<p>另外 esbuild 会自动 tree-shaking，所以钩子函数不能直接写成 function … {} 的形式了，它们会被认为是未使用的变量而直接被剪裁掉。我写了个 <code>registerCallbacks</code> 函数将钩子函数直接挂到 globalThis 上去。</p>
+<h3 id="ESLint"><a href="#ESLint" class="headerlink" title="ESLint"></a>ESLint</h3><p>ESLint 目的是为了规范一些不符合当前推荐的写法，JS Smooth 上很多代码都不太符合目前的前端代码风格。而且 ESLint 还有 auto-fix 的功能，某些规范写法能被自动修正。JS Smooth 里许多不好的分号，都被一条命令去掉了，之前还在想手改可能很麻烦呢。</p>
+<p>ESLint 的规则只能循序地渐渐地添加上去，目前真正在用的是：</p>
+<pre><code class="highlight json">&#123;
+<span class="attr">&quot;rules&quot;</span>: &#123;
+<span class="attr">&quot;no-extra-semi&quot;</span>: <span class="string">&quot;error&quot;</span>,
+<span class="attr">&quot;no-undef&quot;</span>: <span class="string">&quot;error&quot;</span>,
+<span class="attr">&quot;no-redeclare&quot;</span>: <span class="string">&quot;warn&quot;</span>
+&#125;
+&#125;</code></pre>
+
+<h2 id="…"><a href="#…" class="headerlink" title="…"></a>…</h2><p>修改刚刚开始，目前还只是在重构，后续的一些想法，会写成一系列的后续文章。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/foobar2000/" rel="tag"># foobar2000</a>
+          </div>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/build-blog-with-hexo/" rel="prev" title="使用 Hexo 搭建博客">
+      <i class="fa fa-chevron-left"></i> 使用 Hexo 搭建博客
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  Copyright &copy; 
+  2022 longer2022. 
+    Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a>. Hosted at <a href="https://github.com/" rel="noopener" target="_blank">Github</a>.
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/schemes/muse.js"></script>
+
+<script src="/js/next-boot.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
